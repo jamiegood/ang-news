@@ -24,6 +24,14 @@ var app = angular
 
 app.config(function ($routeProvider) {
         $routeProvider
+            .when('/register', {
+                templateUrl: 'views/register.html',
+                controller: 'AuthCtrl'
+            })
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'AuthCtrl'
+            })
             .when('/', {
                 templateUrl: 'views/posts.html',
                 controller: 'PostsCtrl'
@@ -31,8 +39,6 @@ app.config(function ($routeProvider) {
             .when('/posts/:postId', {
                 templateUrl: 'views/postview.html',
                 controller: 'PostViewCtrl'
-            }).otherwise({
-                redirectTo: '/'
             });
     });
 
